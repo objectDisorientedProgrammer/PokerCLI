@@ -22,18 +22,20 @@
 #define CARD_H
 
 #include <iostream>
+#include <string>
+#include "Common.h"
 
 class Card
 {
 public:
-	Card(int sui, int val);
-	int getSuit();
-	int getValue();
+	Card(suit sui, rank val);
+	suit getSuit();
+	rank getRank();
 	friend std::ostream& operator<<(std::ostream &os, Card &aCard);
 
 private:
-	int suit;
-	int value;
+	suit suitType;
+	rank value;
 };
 
 #endif

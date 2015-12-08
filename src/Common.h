@@ -1,5 +1,5 @@
 /*
-    Card.h
+    Common.h
     Copyright (C) 2015  Douglas Chidester
 
     This program is free software: you can redistribute it and/or modify
@@ -17,23 +17,21 @@
  
     Created on: Dec 7, 2015
  */
+ 
+#ifndef COMMON_H
+#define COMMON_H
+ 
+#define NUMBER_OF_SUITS 4
+#define MAX_SUIT_SIZE 13
+#define MAX_DECK_SIZE 52
+#define MIN_NUM_PLAYERS 2
+#define MAX_PLAYER_HAND_SIZE 5
 
-#ifndef CARD_H
-#define CARD_H
-
-#include <iostream>
-
-class Card
-{
-public:
-	Card(int sui, int val);
-	int getSuit();
-	int getValue();
-	friend std::ostream& operator<<(std::ostream &os, Card &aCard);
-
-private:
-	int suit;
-	int value;
-};
-
-#endif
+// ♥=\u2665; ♣=\u2663; ♦=\u2666; ♠=\u2660; 
+enum suit{ hearts = 0, clubs, diamonds, spades };
+enum rank{ two = 2, three, four, five, six, seven, eight,
+            nine, ten, jack, queen, king, ace };
+enum handType{ noPairs = 10, onePair, twoPairs, threeOfAKind, straight,
+               regFlush, fullHouse, fourOfAKind, straightFlush, royalFlush };
+ 
+ #endif
