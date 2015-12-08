@@ -20,8 +20,8 @@
 
 int main(int argc, char* argv[])
 {
-	Dealer house;
-	house.startGame("Misdeal Mike");
+	Dealer house("Misdeal Mike");
+	house.startGame();
 	
 	return 0;
 }

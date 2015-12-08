@@ -22,19 +22,20 @@
 #define DEALER_H
 
 #include <string>
+#include "Person.h"
 
 using std::string;
 
-class Dealer
+class Dealer : public Person
 {
 public:
-    Dealer() {}
+    Dealer() { Person(); }
+	Dealer(string dealerName) { name = dealerName; }
     ~Dealer() {}
 
-    void startGame(string name) {}
+    void startGame() {}
 
 private:
 
 };
-
 #endif
