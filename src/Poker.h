@@ -23,4 +23,6 @@
 
 #include "Dealer.h"
 
+#include "cardTest.h"
+
 #endif

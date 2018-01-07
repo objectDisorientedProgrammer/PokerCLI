@@ -28,10 +28,22 @@
 #define MAX_PLAYER_HAND_SIZE 5
 
 // ♥=\u2665; ♣=\u2663; ♦=\u2666; ♠=\u2660; 
-enum suit{ hearts = 0, clubs, diamonds, spades };
-enum rank{ two = 2, three, four, five, six, seven, eight,
+enum eSuit { hearts, clubs, diamonds, spades };
+
+eSuit operator++(eSuit &suit)
+{
+    switch(suit)
+    {
+        case hearts: suit = clubs; return hearts;
+        case clubs: suit = diamonds; return clubs;
+        case diamonds: suit = spades; return diamonds;
+        case spades: return suit;
+        default: return suit;
+    }
+}
+enum eRank { two = 2, three, four, five, six, seven, eight,
             nine, ten, jack, queen, king, ace };
-enum handType{ noPairs = 10, onePair, twoPairs, threeOfAKind, straight,
+enum eHand { noPairs = 10, onePair, twoPairs, threeOfAKind, straight,
                regFlush, fullHouse, fourOfAKind, straightFlush, royalFlush };
  
  #endif

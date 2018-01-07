@@ -28,14 +28,14 @@
 class Card
 {
 public:
-	Card(suit sui, rank val);
-	suit getSuit();
-	rank getRank();
+	Card(eSuit s, eRank r);
+	inline eSuit getSuit();
+	inline eRank getRank();
 	friend std::ostream& operator<<(std::ostream &os, Card &aCard);
 
 private:
-	suit suitType;
-	rank value;
+	eSuit suit;
+	eRank rank;
 };
 
 #endif
