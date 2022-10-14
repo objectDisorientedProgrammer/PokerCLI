@@ -1,5 +1,5 @@
 /*
-    Poker.h - A simple poker game.
+    Card.h
     Copyright (C) 2015  Douglas Chidester
 
     This program is free software: you can redistribute it and/or modify
@@ -18,11 +18,24 @@
     Created on: Dec 7, 2015
  */
 
-#ifndef POKER_H
-#define POKER_H
+#ifndef CARD_H
+#define CARD_H
 
-#include "Dealer.h"
+#include <iostream>
+#include <string>
+#include "Common.h"
 
-#include "cardTest.h"
+class Card
+{
+public:
+	Card(eSuit s, eRank r);
+	inline eSuit getSuit();
+	inline eRank getRank();
+	friend std::ostream& operator<<(std::ostream &os, Card &aCard);
+
+private:
+	eSuit suit;
+	eRank rank;
+};
 
 #endif

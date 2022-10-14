@@ -1,5 +1,5 @@
 /*
-    Dealer.h
+    Card.h
     Copyright (C) 2015  Douglas Chidester
 
     This program is free software: you can redistribute it and/or modify
@@ -18,23 +18,22 @@
     Created on: Dec 7, 2015
  */
 
-#ifndef DEALER_H
-#define DEALER_H
+#ifndef CARD_H
+#define CARD_H
 
-#include <string>
+#include <iostream>
 
-using std::string;
-
-class Dealer
+class Card
 {
 public:
-    Dealer() {}
-    ~Dealer() {}
-
-    void startGame(string name) {}
+	Card(int sui, int val);
+	int getSuit();
+	int getValue();
+	friend std::ostream& operator<<(std::ostream &os, Card &aCard);
 
 private:
-
+	int suit;
+	int value;
 };
 
 #endif
